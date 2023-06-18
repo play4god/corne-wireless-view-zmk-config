@@ -9,15 +9,104 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        BRACKETS {
+            bindings = <&mt RIGHT_BRACKET LBKT>;
+            key-positions = <9 10>;
+            layers = <0>;
+        };
+
+        BOOTELOADER_R {
+            bindings = <&bootloader>;
+            key-positions = <39 40 41 11>;
+        };
+
+        BOOTLOADER_L {
+            bindings = <&bootloader>;
+            key-positions = <38 37 36 0 0 0>;
+        };
+    };
+
+    macros {
+        SCREENSHOT: SCREENSHOT {
+            compatible = "zmk,behavior-macro";
+            label = "SCREENSHOT";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_GUI &kp LS(N5)>;
+        };
+        M_VSPREV: M_VSPREV {
+            compatible = "zmk,behavior-macro";
+            label = "M_VSPREV";
+            #binding-cells = <0>;
+            bindings = <&kp LC(MINUS)>;
+        };
+        M_VSNEXT: M_VSNEXT {
+            compatible = "zmk,behavior-macro";
+            label = "M_VSNEXT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LS(MINUS))>;
+        };
+        M_IJPREV: M_IJPREV {
+            compatible = "zmk,behavior-macro";
+            label = "M_IJPREV";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LBKT)>;
+        };
+        M_IJNEXT: M_IJNEXT {
+            compatible = "zmk,behavior-macro";
+            label = "M_IJNEXT";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RBKT)>;
+        };
+        M_ITERMPREV: M_ITERMPREV {
+            compatible = "zmk,behavior-macro";
+            label = "M_ITERMPREV";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LEFT)>;
+        };
+        M_ITERMNEXT: M_ITERMNEXT {
+            compatible = "zmk,behavior-macro";
+            label = "M_ITERMNEXT";
+            #binding-cells = <0>;
+            bindings = <&kp LG(RIGHT)>;
+        };
+        M_SPACESNEXT: M_SPACESNEXT {
+            compatible = "zmk,behavior-macro";
+            label = "M_SPACESNEXT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(RIGHT)>;
+        };
+        M_SPACESPREV: M_SPACESPREV {
+            compatible = "zmk,behavior-macro";
+            label = "M_SPACESPREV";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LEFT)>;
+        };
+        M_CHROMETABNEXT: M_CHROMETABNEXT {
+            compatible = "zmk,behavior-macro";
+            label = "M_CHROMETABNEXT";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LA(RIGHT))>;
+        };
+        M_CHROMETABPREV: M_CHROMETABPREV {
+            compatible = "zmk,behavior-macro";
+            label = "M_CHROMETABPREV";
+            #binding-cells = <0>;
+            bindings = <&kp LG(LA(LEFT))>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         BASE_LAYER {
             bindings = <
-  &kp TAB  &kp Q  &kp W     &kp E    &kp R     &kp T        &kp Y    &kp U       &kp I    &kp O     &kp P  &kp LCTRL
- &kp BSPC  &kp A  &kp S     &kp D    &kp F     &kp G        &kp H    &kp J       &kp K    &kp L  &kp SEMI    &kp SQT
-&kp LSHFT  &kp Z  &kp X   &lt 2 C  &lt 1 V   &lt 3 B        &kp N    &kp M   &kp COMMA  &kp DOT  &kp FSLH  &kp LCTRL
-                         &kp RALT    &mo 1  &kp LGUI    &kp SPACE  &kp RET  &kp ESCAPE
+       &kp TAB  &kp Q  &kp W     &kp E    &kp R     &kp T        &kp Y    &kp U      &kp I    &kp O     &kp P  &mt BSLH MINUS
+      &kp BSPC  &kp A  &kp S     &kp D    &kp F     &kp G        &kp H    &kp J      &kp K    &kp L  &kp SEMI         &kp SQT
+&mt LSHIFT ESC  &kp Z  &kp X     &kp C  &lt 2 V   &lt 3 B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH       &kp LCTRL
+                              &kp RALT    &mo 1  &kp LGUI    &kp SPACE  &kp RET      &mo 2
             >;
         };
 
@@ -32,19 +121,19 @@
 
         NAV_LAYER {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &kp K_SCROLL_DOWN          &kp HOME  &kp PAGE_DOWN     &kp PG_UP          &kp END  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &kp K_SCROLL_UP    &kp LEFT_ARROW       &kp DOWN  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
-&trans  &trans  &trans  &trans  &trans             &trans            &trans         &trans        &trans           &trans  &trans  &trans
-                        &trans  &trans             &trans            &trans         &trans        &trans
+       &trans         &trans         &M_VSPREV         &M_VSNEXT  &trans  &trans          &kp HOME  &kp PAGE_DOWN     &kp PG_UP          &kp END  &kp C_AC_SCROLL_DOWN  &trans
+&M_SPACESPREV  &M_SPACESNEXT         &M_IJPREV         &M_IJNEXT  &trans  &trans    &kp LEFT_ARROW       &kp DOWN  &kp UP_ARROW  &kp RIGHT_ARROW    &kp C_AC_SCROLL_UP  &trans
+ &M_ITERMPREV   &M_ITERMNEXT  &M_CHROMETABPREV  &M_CHROMETABNEXT  &trans  &trans            &trans         &trans        &trans           &trans                &trans  &trans
+                                                          &trans  &trans  &trans            &trans         &trans        &trans
             >;
         };
 
         ADJUST_LAYER {
             bindings = <
-&kp C_BRIGHTNESS_DEC  &kp C_BRI_UP  &kp C_VOL_DN    &kp C_MUTE  &kp C_VOL_UP  &kp C_SNAPSHOT    &trans  &kp F7  &kp F8  &kp F9  &kp F10  &kp F11
-              &trans        &trans  &kp C_REWIND      &kp C_PP      &kp C_FF          &trans    &trans  &kp F4  &kp F5  &kp F6   &trans  &kp F12
-          &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3          &trans    &trans  &kp F1  &kp F2  &kp F3   &trans   &trans
-                                                        &trans        &trans          &trans    &trans  &trans  &trans
+&trans   &kp F1   &kp F2  &kp F3  &kp F4   &kp F5       &SCREENSHOT  &kp C_VOL_DN    &kp C_MUTE  &kp C_VOL_UP           &kp C_BRI_DN  &kp C_BRI_UP
+&trans   &kp F6   &kp F7  &kp F8  &kp F9  &kp F10    &kp C_AC_PRINT      &kp C_RW      &kp C_PP      &kp C_FF  &kp C_AL_SCREEN_SAVER   &kp C_SLEEP
+&trans  &kp F11  &kp F12  &trans  &trans   &trans        &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2           &bt BT_SEL 3  &bt BT_SEL 4
+                          &trans  &trans   &trans            &trans        &trans        &trans
             >;
         };
     };

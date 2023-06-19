@@ -29,12 +29,6 @@
     };
 
     macros {
-        M_SCREENSHOT: M_SCREENSHOT {
-            compatible = "zmk,behavior-macro";
-            label = "M_SCREENSHOT";
-            #binding-cells = <0>;
-            bindings = <&kp LS(LEFT_GUI) &kp N5>;
-        };
         M_VSPREV: M_VSPREV {
             compatible = "zmk,behavior-macro";
             label = "M_VSPREV";
@@ -117,10 +111,10 @@
 
         NUM_LAYER {
             bindings = <
-&kp GRAVE    &kp N1    &kp N2        &kp N3        &kp N4     &kp N5       &kp N6   &kp N7  &kp N8  &kp N9     &kp N0  &kp MINUS
-   &trans  &kp LBKT  &kp RBKT  &kp LS(LBKT)  &kp LS(RBKT)  &kp EQUAL    &kp ASTRK   &kp N4  &kp N5  &kp N6   &kp PLUS  &kp EQUAL
-   &trans    &trans    &trans        &trans        &trans     &trans     &kp FSLH   &kp N1  &kp N2  &kp N3  &kp MINUS    &kp DOT
-                                   &kp RALT        &trans   &kp LGUI     &kp BSPC  &kp RET  &kp N0
+&kp GRAVE    &kp N1    &kp N2        &kp N3        &kp N4      &kp N5       &kp N6  &kp N7  &kp N8  &kp N9     &kp N0  &kp MINUS
+   &trans  &kp LBKT  &kp RBKT  &kp LS(LBKT)  &kp LS(RBKT)   &kp EQUAL    &kp ASTRK  &kp N4  &kp N5  &kp N6   &kp PLUS  &kp EQUAL
+   &trans    &trans    &trans        &trans        &trans  &kp DELETE     &kp FSLH  &kp N1  &kp N2  &kp N3  &kp MINUS    &kp DOT
+                                     &trans        &trans      &trans       &trans  &trans  &kp N0
             >;
         };
 

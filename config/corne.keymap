@@ -53,15 +53,15 @@
             #binding-cells = <0>;
             bindings = <&kp LG(RBKT)>;
         };
-        M_ITERMPREV: M_ITERMPREV {
+        M_ITBRPREV: M_ITBRPREV {
             compatible = "zmk,behavior-macro";
-            label = "M_ITERMPREV";
+            label = "M_ITBRPREV";
             #binding-cells = <0>;
             bindings = <&kp LG(LEFT)>;
         };
-        M_ITERMNEXT: M_ITERMNEXT {
+        M_ITBRNEXT: M_ITBRNEXT {
             compatible = "zmk,behavior-macro";
-            label = "M_ITERMNEXT";
+            label = "M_ITBRNEXT";
             #binding-cells = <0>;
             bindings = <&kp LG(RIGHT)>;
         };
@@ -104,7 +104,7 @@
             bindings = <
        &kp TAB  &kp Q  &kp W     &kp E  &kp R     &kp T        &kp Y    &kp U      &kp I    &kp O     &kp P  &mt BACKSLASH MINUS
       &kp BSPC  &kp A  &kp S     &kp D  &kp F     &kp G        &kp H    &kp J      &kp K    &kp L  &kp SEMI              &kp SQT
-&mt LSHIFT ESC  &kp Z  &kp X     &kp C  &kp V   &lt 3 B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH            &kp LCTRL
+&mt LSHIFT ESC  &kp Z  &kp X     &kp C  &kp V     &kp B        &kp N    &kp M  &kp COMMA  &kp DOT  &kp FSLH            &kp LCTRL
                               &kp RALT  &mo 1  &kp LGUI    &kp SPACE  &kp RET      &mo 2
             >;
         };
@@ -121,8 +121,8 @@
         NAV_LAYER {
             bindings = <
 &kp LG(GRAVE)  &M_SPACESPREV  &M_SPACESNEXT         &M_VSPREV         &M_VSNEXT  &trans          &kp HOME  &kp PAGE_DOWN     &kp PG_UP          &kp END  &trans  &trans
-       &trans     &kp K_BACK  &kp K_FORWARD  &M_CHROMETABPREV  &M_CHROMETABNEXT  &trans    &kp LEFT_ARROW       &kp DOWN  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
-       &trans   &M_ITERMPREV   &M_ITERMNEXT         &M_IJPREV         &M_IJNEXT  &trans            &trans         &trans        &trans           &trans  &trans  &trans
+       &trans    &M_ITBRPREV    &M_ITBRNEXT  &M_CHROMETABPREV  &M_CHROMETABNEXT  &trans    &kp LEFT_ARROW       &kp DOWN  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+       &trans         &trans         &trans         &M_IJPREV         &M_IJNEXT  &trans            &trans         &trans        &trans           &trans  &trans  &trans
                                                        &trans            &trans  &trans            &trans         &trans        &trans
             >;
         };

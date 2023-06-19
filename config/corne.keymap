@@ -120,9 +120,9 @@
 
         NAV_LAYER {
             bindings = <
-&kp LG(GRAVE)         &trans         &trans         &M_VSPREV         &M_VSNEXT  &trans          &kp HOME  &kp PAGE_DOWN     &kp PG_UP          &kp END  &trans  &trans
-       &trans  &M_SPACESPREV  &M_SPACESNEXT         &M_IJPREV         &M_IJNEXT  &trans    &kp LEFT_ARROW       &kp DOWN  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
-       &trans   &M_ITERMPREV   &M_ITERMNEXT  &M_CHROMETABPREV  &M_CHROMETABNEXT  &trans            &trans         &trans        &trans           &trans  &trans  &trans
+&kp LG(GRAVE)  &M_SPACESPREV  &M_SPACESNEXT         &M_VSPREV         &M_VSNEXT  &trans          &kp HOME  &kp PAGE_DOWN     &kp PG_UP          &kp END  &trans  &trans
+       &trans     &kp K_BACK  &kp K_FORWARD  &M_CHROMETABPREV  &M_CHROMETABNEXT  &trans    &kp LEFT_ARROW       &kp DOWN  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
+       &trans   &M_ITERMPREV   &M_ITERMNEXT         &M_IJPREV         &M_IJNEXT  &trans            &trans         &trans        &trans           &trans  &trans  &trans
                                                        &trans            &trans  &trans            &trans         &trans        &trans
             >;
         };

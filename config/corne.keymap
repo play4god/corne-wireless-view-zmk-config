@@ -101,6 +101,7 @@
         compatible = "zmk,keymap";
 
         BASE_LAYER {
+            label = "ALPHA";
             bindings = <
        &kp TAB  &kp Q  &kp W     &kp E  &kp R     &kp T        &kp Y    &kp U      &kp I    &kp O     &kp P  &mt BACKSLASH MINUS
       &kp BSPC  &kp A  &kp S     &kp D  &kp F     &kp G        &kp H    &kp J      &kp K    &kp L  &kp SEMI              &kp SQT
@@ -110,15 +111,17 @@
         };
 
         NUM_LAYER {
+            label = "NUMBER";
             bindings = <
-&kp GRAVE    &kp N1    &kp N2        &kp N3        &kp N4      &kp N5       &kp N6  &kp N7  &kp N8  &kp N9     &kp N0   &kp BSLH
+&kp GRAVE    &kp N1    &kp N2        &kp N3        &kp N4      &kp N5       &kp N6  &kp N7  &kp N8  &kp N9   &kp N0    &kp BSLH
    &trans  &kp LBKT  &kp RBKT  &kp LS(LBKT)  &kp LS(RBKT)   &kp EQUAL    &kp ASTRK  &kp N4  &kp N5  &kp N6   &kp PLUS  &kp EQUAL
-   &trans    &trans    &trans        &trans        &trans  &kp DELETE     &kp FSLH  &kp N1  &kp N2  &kp N3  &kp MINUS    &kp DOT
+   &trans    &trans    &trans        &trans        &trans  &kp DELETE     &kp FSLH  &kp N1  &kp N2  &kp N3   &kp DOT   &kp MINUS
                                      &trans        &trans      &trans       &trans  &trans  &kp N0
             >;
         };
 
         NAV_LAYER {
+            label = "MOVE";
             bindings = <
 &kp LG(GRAVE)  &M_SPACESPREV  &M_SPACESNEXT         &M_VSPREV         &M_VSNEXT  &trans          &kp HOME  &kp PAGE_DOWN     &kp PG_UP          &kp END  &trans  &trans
        &trans    &M_ITBRPREV    &M_ITBRNEXT  &M_CHROMETABPREV  &M_CHROMETABNEXT  &trans    &kp LEFT_ARROW       &kp DOWN  &kp UP_ARROW  &kp RIGHT_ARROW  &trans  &trans
@@ -128,6 +131,7 @@
         };
 
         ADJUST_LAYER {
+            label = "SYMBOL";
             bindings = <
 &trans   &kp F1   &kp F2  &kp F3  &kp F4   &kp F5        &trans  &kp C_VOL_DN    &kp C_MUTE  &kp C_VOL_UP  &kp C_BRI_DN  &kp C_BRI_UP
 &trans   &kp F6   &kp F7  &kp F8  &kp F9  &kp F10        &trans      &kp C_RW      &kp C_PP      &kp C_FF        &trans   &M_MACSLEEP

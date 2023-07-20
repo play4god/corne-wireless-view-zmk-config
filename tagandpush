@@ -15,3 +15,7 @@ echo Last tag $LASTVER
 echo Tagging and pushing $THISVER
 git tag $THISVER
 git push --tags
+
+echo
+echo "View build here:"
+echo "https://github.com/play4god/corne-wireless-view-zmk-config/actions"
